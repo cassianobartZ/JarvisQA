@@ -34,13 +34,15 @@ def exp1(top_k=10, positions=None):
 
 def exp2(top_k=10, positions=None):
     if positions is None:
-        positions = [1, 3, 5, 10]
-    ds_path = './datasets/orkg/ORKG-QA-DS.csv'
+        positions = [1, 10]
+        # positions = [1, 3, 5, 10]
+    ds_path = './datasets/sciqa/SciQA-DS.csv'
     final_result = ''
-    for model in ['bert-large-uncased-whole-word-masking-finetuned-squad',
-                  'bert-large-cased-whole-word-masking-finetuned-squad', 'deepset/bert-base-cased-squad2',
-                  'deepset/bert-large-uncased-whole-word-masking-squad2', 'distilbert-base-uncased-distilled-squad',
-                  'ktrapeznikov/albert-xlarge-v2-squad-v2', 'replydotai/albert-xxlarge-v1-finetuned-squad2']:
+    # for model in ['bert-large-uncased-whole-word-masking-finetuned-squad',
+    #               'bert-large-cased-whole-word-masking-finetuned-squad', 'deepset/bert-base-cased-squad2',
+    #               'deepset/bert-large-uncased-whole-word-masking-squad2', 'distilbert-base-uncased-distilled-squad',
+    #               'ktrapeznikov/albert-xlarge-v2-squad-v2', 'replydotai/albert-xxlarge-v1-finetuned-squad2']:
+    for model in ['bert-large-cased-whole-word-masking-finetuned-squad', 'ktrapeznikov/albert-xlarge-v2-squad-v2']:
         final_result = f'{final_result}On model: {model}\n'
         print(f'Starting with model {model}')
         for kind in ['normal', 'aggregation', 'related', 'similar']:
@@ -56,7 +58,7 @@ def exp2(top_k=10, positions=None):
             final_result = f'{final_result}Jarvis:\nk={result[0]}\tPrecision: {result[1]:.4f},\tRecall: {result[2]:.4f},\tF1-Score: {result[3]:.4f}\n'
             print(f"Done with Jarvis overall@{result[0]}")
         final_result = f'{final_result}{"=" * 40}\n'
-    with open('benchmark-results-exp2.txt', 'w') as out_file:
+    with open('benchmark-results-exp2-new.txt', 'w+') as out_file:
         out_file.write(final_result)
 
 
@@ -85,6 +87,6 @@ def exp4(top_k=10, positions=None):
 
 
 if __name__ == '__main__':
-    exp1()
+    # exp1()
     exp2()
-    exp4()
+    # exp4()

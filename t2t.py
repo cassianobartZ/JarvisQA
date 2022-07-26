@@ -48,7 +48,9 @@ class T2T:
                 info.append(f'The paper with the maximum {column} is "{max_title}"'
                             f' and the paper with the minimum {column} is {min_title}')
             if is_string_dtype(column_df):
-                counts = Counter([value.strip() for value in chain(*[value.split(',') for value in column_df.values]) if len(value) > 0])
+                counts = Counter([str(value).strip() for value in chain(*[str(value).split(',') for value in column_df.values]) if len(value) > 0])
+                print('counts')
+                print(counts)
                 max_occurrence = max(counts.values())
                 if max_occurrence == 1:
                     # ignore one value occurrences
