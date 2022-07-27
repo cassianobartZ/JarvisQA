@@ -42,24 +42,25 @@ def exp2(top_k=10, positions=None):
     #               'bert-large-cased-whole-word-masking-finetuned-squad', 'deepset/bert-base-cased-squad2',
     #               'deepset/bert-large-uncased-whole-word-masking-squad2', 'distilbert-base-uncased-distilled-squad',
     #               'ktrapeznikov/albert-xlarge-v2-squad-v2', 'replydotai/albert-xxlarge-v1-finetuned-squad2']:
-    for model in ['bert-large-cased-whole-word-masking-finetuned-squad', 'ktrapeznikov/albert-xlarge-v2-squad-v2']:
-        final_result = f'{final_result}On model: {model}\n'
-        print(f'Starting with model {model}')
-        for kind in ['normal', 'aggregation', 'related', 'similar']:
-            results = evaluate.evaluate_jarvis_efficient(ds_path, top_k, qtype=kind, model_name=model)
+    with open('benchmark-results-exp2-new.txt', 'w+') as out_file:
+        for model in ['ktrapeznikov/albert-xlarge-v2-squad-v2']:
+        # for model in ['bert-large-cased-whole-word-masking-finetuned-squad', 'ktrapeznikov/albert-xlarge-v2-squad-v2']:
+            final_result = f'{final_result}On model: {model}\n'
+            print(f'Starting with model {model}')
+            for kind in ['normal', 'aggregation', 'related', 'similar']:
+                results = evaluate.evaluate_jarvis_efficient(ds_path, top_k, qtype=kind, model_name=model)
+                results = [x for x in results if x[0] in positions]
+                for result in results:
+                    final_result = f'{final_result}Jarvis {kind}:\nk={result[0]}\tPrecision: {result[1]:.4f},\tRecall: {result[2]:.4f},\tF1-Score: {result[3]:.4f}\n'
+                    print(f"Done with Jarvis {kind}@{result[0]}")
+                final_result = f'{final_result}{"*" * 30}\n'
+            results = evaluate.evaluate_jarvis_efficient(ds_path, top_k, model_name=model)
             results = [x for x in results if x[0] in positions]
             for result in results:
-                final_result = f'{final_result}Jarvis {kind}:\nk={result[0]}\tPrecision: {result[1]:.4f},\tRecall: {result[2]:.4f},\tF1-Score: {result[3]:.4f}\n'
-                print(f"Done with Jarvis {kind}@{result[0]}")
-            final_result = f'{final_result}{"*" * 30}\n'
-        results = evaluate.evaluate_jarvis_efficient(ds_path, top_k, model_name=model)
-        results = [x for x in results if x[0] in positions]
-        for result in results:
-            final_result = f'{final_result}Jarvis:\nk={result[0]}\tPrecision: {result[1]:.4f},\tRecall: {result[2]:.4f},\tF1-Score: {result[3]:.4f}\n'
-            print(f"Done with Jarvis overall@{result[0]}")
-        final_result = f'{final_result}{"=" * 40}\n'
-    with open('benchmark-results-exp2-new.txt', 'w+') as out_file:
-        out_file.write(final_result)
+                final_result = f'{final_result}Jarvis:\nk={result[0]}\tPrecision: {result[1]:.4f},\tRecall: {result[2]:.4f},\tF1-Score: {result[3]:.4f}\n'
+                print(f"Done with Jarvis overall@{result[0]}")
+            final_result = f'{final_result}{"=" * 40}\n'
+            out_file.write(final_result)          
 
 
 def exp4(top_k=10, positions=None):
