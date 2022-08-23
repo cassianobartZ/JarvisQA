@@ -1,0 +1,42 @@
+The most common Continent is "North-America", and the least common is "All continents except Antarctica"
+The most common Habitat is "Terrestrial", and the least common is "terrestrial"
+The most common has research problem is "Testing the enemy release hypothesis in invasion biology", and the least common is "Testing the enemy release hypothesis in invasion biology"
+The most common hypothesis is "Enemy release", and the least common is "Enemy release"
+The most common Indicator for enemy release is "Infestation", and the least common is "Performance"
+The most common Investigated species is "Plants", and the least common are "Mammals, Other invertebrates, Amphibians"
+The most common Number of species is "1.0", and the least common are "927.0, 17.0, 36.0, 18.0, 101.0, 20.0, 14.0, 49.0, 19.0, 140.0, 39.0, 473.0, 41.0, 13.0, 21.0"
+The most common Release of which kind of enemies? is "no differentiation", and the least common is "Generalists"
+The most common Research Method is "Observational or correlational", and the least common is "Experiment"
+The most common stand of hypothesis is "Supported", and the least common is "Undecided"
+The maximum value of Study date is 2016, the minimum value of Study date is 2000, and the average value of Study date is 2010.02
+The paper with the maximum Study date is "A Comparison of Herbivore Damage on Three Invasive Plants and Their Native Congeners: Implications for the Enemy Release Hypothesis" and the paper with the minimum Study date is The invertebrate fauna on broom, Cytisus scoparius, in two native and two exotic habitats 
+The most common Sub-hypothesis is "ANI", and the least common are "P INi, INID, ANDg, P Ag, INiDs, INiIs"
+The most common type of experiment is "Field", and the least common is "Exclosure"
+The most common Which species are compared? is "Aliens and natives", and the least common is "Only aliens"
+
+
+
+maybe prepare the data to be lowercase or uppercase? Terrestrial vs terrestrial -- sometimes it is exact equal
+muitos repetidos no most common e last common
+numeros com fillna acabam caindo como string e o most common e least common nao faz sentido
+maybe add more than maximum, minimum and average, like sum for example and maybe other opertions
+
+
+after mod1 (fillna(0))
+
+The most common Continent is "North-America", and the least common is "All continents except Antarctica"
+The most common Habitat is "Terrestrial", and the least common is "terrestrial"
+The most common has research problem is "Testing the enemy release hypothesis in invasion biology", and the least common is "Testing the enemy release hypothesis in invasion biology"
+The most common hypothesis is "Enemy release", and the least common is "Enemy release"
+The most common Indicator for enemy release is "Infestation", and the least common is "Performance"
+The most common Investigated species is "Plants", and the least common are "Mammals, Other invertebrates, Amphibians"
+The maximum value of Number of species is 927.0, the minimum value of Number of species is 0.0, and the average value of Number of species is 13.17
+The paper with the maximum Number of species is "A test of the enemy release hypothesis for plants in the Ecological-Botanical Gardens, Bayreuth, using data on plant parasitic microfungi" and the paper with the minimum Number of species is Specialist enemies, generalist weapons and the potential spread of exotic pathogens: malaria parasites in a highly invasive bird
+The most common Release of which kind of enemies? is "no differentiation", and the least common is "Generalists"
+The most common Research Method is "Observational or correlational", and the least common is "Experiment"
+The most common stand of hypothesis is "Supported", and the least common is "Undecided"
+The maximum value of Study date is 2016, the minimum value of Study date is 2000, and the average value of Study date is 2010.02
+The paper with the maximum Study date is "A Comparison of Herbivore Damage on Three Invasive Plants and Their Native Congeners: Implications for the Enemy Release Hypothesis" and the paper with the minimum Study date is The invertebrate fauna on broom, Cytisus scoparius, in two native and two exotic habitats 
+The most common Sub-hypothesis is "ANI", and the least common are "P INi, INID, ANDg, P Ag, INiDs, INiIs"
+The most common type of experiment is "Field", and the least common is "Exclosure"
+The most common Which species are compared? is "Aliens and natives", and the least common is "Only aliens"

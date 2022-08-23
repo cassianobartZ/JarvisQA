@@ -35,8 +35,10 @@ class T2T:
     def append_aggregation_info(self, df: pd.DataFrame) -> str:
         info = []
         for column in df:
-            column_df = df[column].fillna('')
-            if is_numeric_dtype(column_df):
+            
+            # R58002 Number of species
+            if is_numeric_dtype(df[column]):
+                column_df = df[column].fillna(0)
                 max_value = column_df.max()
                 min_value = column_df.min()
                 avg_value = column_df.mean()
@@ -47,7 +49,8 @@ class T2T:
                 min_title = df.iloc[column_df.argmin()]['Title']
                 info.append(f'The paper with the maximum {column} is "{max_title}"'
                             f' and the paper with the minimum {column} is {min_title}')
-            if is_string_dtype(column_df):
+            if is_string_dtype(df[column]):
+                column_df = df[column].fillna('')
                 counts = Counter([str(value).strip() for value in chain(*[str(value).split(',') for value in column_df.values]) if len(value) > 0])
                 print('counts')
                 print(counts)
@@ -79,7 +82,8 @@ class T2T:
         header, rows = self.read_csv(csv_path)
         sep = '\t' if csv_path[-4:] == '.tsv' else ','
         extra_info = self.append_aggregation_info(pd.read_csv(csv_path, sep=sep))
-        return ('\n'.join([self.row_2_text(row, header, empty) for row in rows])) + '\n' + extra_info
+        test = ('\n'.join([self.row_2_text(row, header, empty) for row in rows])) + '\n' + extra_info
+        return test
 
 
 if __name__ == '__main__':
