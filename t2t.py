@@ -52,8 +52,6 @@ class T2T:
             if is_string_dtype(df[column]):
                 column_df = df[column].fillna('')
                 counts = Counter([str(value).strip() for value in chain(*[str(value).split(',') for value in column_df.values]) if len(value) > 0])
-                print('counts')
-                print(counts)
                 max_occurrence = max(counts.values())
                 if max_occurrence == 1:
                     # ignore one value occurrences
@@ -78,12 +76,13 @@ class T2T:
         text = f'{text}, and its {self.clean_predicate(parts[-1][0])} {self.append_value(parts[-1][1])}.'
         return text
 
-    def table_2_text(self, csv_path: str, empty=False) -> str:
+    def table_2_text(self, csv_path: str, empty=False) -> list:
         header, rows = self.read_csv(csv_path)
         sep = '\t' if csv_path[-4:] == '.tsv' else ','
         extra_info = self.append_aggregation_info(pd.read_csv(csv_path, sep=sep))
-        test = ('\n'.join([self.row_2_text(row, header, empty) for row in rows])) + '\n' + extra_info
-        return test
+        allText = ('\n'.join([self.row_2_text(row, header, empty) for row in rows]))
+        result = allText+ '\n' + extra_info
+        return result
 
 
 if __name__ == '__main__':

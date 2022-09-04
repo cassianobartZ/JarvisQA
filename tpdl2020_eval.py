@@ -32,19 +32,20 @@ def exp1(top_k=10, positions=None):
         out_file.write(final_result)
 
 
-def exp2(top_k=10, positions=None):
+# def exp2(top_k=10, positions=None):
+def exp2(top_k=1, positions=None):
     if positions is None:
         positions = [1, 10]
         # positions = [1, 3, 5, 10]
-    ds_path = './datasets/sciqa/SciQA-DS.csv'
+    ds_path = './datasets/sciqa-mod/SciQA-DS.csv'
     final_result = ''
     # for model in ['bert-large-uncased-whole-word-masking-finetuned-squad',
     #               'bert-large-cased-whole-word-masking-finetuned-squad', 'deepset/bert-base-cased-squad2',
     #               'deepset/bert-large-uncased-whole-word-masking-squad2', 'distilbert-base-uncased-distilled-squad',
     #               'ktrapeznikov/albert-xlarge-v2-squad-v2', 'replydotai/albert-xxlarge-v1-finetuned-squad2']:
     with open('benchmark-results-exp2-new.txt', 'w+') as out_file:
-        for model in ['ktrapeznikov/albert-xlarge-v2-squad-v2']:
-        # for model in ['bert-large-cased-whole-word-masking-finetuned-squad', 'ktrapeznikov/albert-xlarge-v2-squad-v2']:
+        # for model in ['ktrapeznikov/albert-xlarge-v2-squad-v2']:
+        for model in ['bert-large-cased-whole-word-masking-finetuned-squad']:
             final_result = f'{final_result}On model: {model}\n'
             print(f'Starting with model {model}')
             for kind in ['normal', 'aggregation', 'related', 'similar']:

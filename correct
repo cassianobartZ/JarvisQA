@@ -1,0 +1,114 @@
+correct
+What type of data does the system proposed in paper titled "Open Research Knowledge Graph" support?
+Free text
+
+correct
+What is the scope of "Decentralised Authoring, Annotations and Notifications for a Read-Write Web with Dokieli"?
+Full paper
+
+correct
+Who is responsible for acquisition in the RASH system?
+Authors
+
+correct
+Which system has the worst recall?
+YodaQA
+
+correct
+What was the most common type of approach for summarization before 2002?
+Algebraic
+
+correct
+What is the maximum sample size?
+9394
+
+correct
+What is the most common location in the studies?
+China
+
+correct
+What is the base URL of "The Document Components Ontology"?
+http://purl.org/spar/doco
+
+correct
+What is the most common lead compound?
+Aurein 1.2
+
+correct
+What risk factors for OSA are discovered in the paper with 100% OSA frequency?
+Increase in age
+
+correct
+Which countries are considered in the papers about geopolitics?
+Ethiopia and Egypt
+
+correct
+Which vegetables are utilized for betanin extraction?
+Beetroot
+
+correct
+What is the maximum egg mass in studies?
+1461.0
+
+correct
+What is the most common substrate for catalysts?
+phenylacetylene
+
+correct
+For which region of data collection the number of sampling stations is the largest?
+Eastern Indian Ocean
+
+correct
+What is the most common drug in the studies?
+Insulin
+
+correct
+For what product minimum conversion was obtained?
+catechol
+
+correct
+What is the most common type of biosensor?
+Glucose
+
+correct
+What is the maximum reaction yield for the studies?
+93
+
+
+wrong - this one I have doubts about if it is correct indeed
+What is the most common Knowledge representation method?
+
+wrong - and question, two informations needed --- maybe explode information and see if and is recognized?
+What is the precision and recall of SemGraphQA?
+
+wrong - multiple information - maybe try table transposition
+Which methods are used?
+
+wrong - need to compute data - maybe here I can do something
+Which ontology has the most classes?
+
+wrong - column "uses similarity" and has prop cosine - maybe?
+"Does paper ""Disambiguating authors in citations on the web and authorship correlations"" employe Cosine similarity?"
+
+wrong - again I think this might have an error, but, it is needed to fetch data for a specific column
+"what are the evidence and limitations of paper ""Evaluating the Use of Social Networks in Author Name Disambiguation in Digital Libraries""?"
+
+wrong - list question  and need to see a column and get rows
+Which scholarly knowledge graphs support RDF?
+
+wrong - complex - column is not called country and needs to compare data
+For which country of study overall prevalence of epilepsy is the highest?
+
+wrong - column has the name indicators for well-being, but it needs to enumerate
+Which indicators for well-being are used in the studies on the effect of COVID-19?
+
+
+add aggregate before or after? check if addicional info is actually used
+can we use the question itself to prepare the data?
+
+--some questions exceed 512 tokens already - ill try to maybe answer splitting the input
+
+--------------FIRST CHANGE
+--Split answers if tokens exceed 512:
+
+

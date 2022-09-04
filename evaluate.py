@@ -155,8 +155,6 @@ def evaluate_jarvis_efficient(dataset_path, top_k=3, qtype=None, model_name='dee
     for k in range(top_k):
         p, r, f1, _ = precision_recall_fscore_support(y_true, y_pred[k], average='macro', zero_division=0)
         results.append((k+1, p, r, f1))
-    print("results")
-    print(results)
     return results
 
 

@@ -10,6 +10,4 @@ class JarvisQA:
 
     def answer_question(self, csv_path: str, question: str, topk: int = 3) -> list:
         context = self.t2t.table_2_text(csv_path)
-        print('context with aggregate')
-        print(context)
         return self.brain.answer(question, context, top_k=topk)
