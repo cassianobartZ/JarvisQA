@@ -35,10 +35,8 @@ class T2T:
     def append_aggregation_info(self, df: pd.DataFrame) -> str:
         info = []
         for column in df:
-            
-            # R58002 Number of species
-            if is_numeric_dtype(df[column]):
-                column_df = df[column].fillna(0)
+            column_df = df[column].fillna('')
+            if is_numeric_dtype(column_df):
                 max_value = column_df.max()
                 min_value = column_df.min()
                 avg_value = column_df.mean()
@@ -49,8 +47,7 @@ class T2T:
                 min_title = df.iloc[column_df.argmin()]['Title']
                 info.append(f'The paper with the maximum {column} is "{max_title}"'
                             f' and the paper with the minimum {column} is {min_title}')
-            if is_string_dtype(df[column]):
-                column_df = df[column].fillna('')
+            if is_string_dtype(column_df):
                 counts = Counter([str(value).strip() for value in chain(*[str(value).split(',') for value in column_df.values]) if len(value) > 0])
                 max_occurrence = max(counts.values())
                 if max_occurrence == 1:
