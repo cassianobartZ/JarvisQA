@@ -80,9 +80,24 @@ class T2T:
         header, rows = self.read_csv(csv_path)
         sep = '\t' if csv_path[-4:] == '.tsv' else ','
         extra_info = self.append_aggregation_info(pd.read_csv(csv_path, sep=sep))
-        allText = ('\n'.join([self.row_2_text(row, header, empty) for row in rows]))
-        result = allText+ '\n' + extra_info
-        return result
+
+        resultArray = []
+        allText = ''
+        for row in rows:
+            rowText = self.row_2_text(row, header, empty)
+            test = allText + '\n' + rowText + '\n' + extra_info
+            if len(test.split()) > 512:
+                resultArray.append(allText+ '\n' + extra_info)
+                allText = rowText
+                continue
+            allText = allText + '\n' + rowText
+
+        if len(resultArray) == 0:
+            resultArray.append(allText+ '\n' + extra_info)
+        else:
+            resultArray[-1] = resultArray[-1] + '\n' + extra_info
+
+        return resultArray
 
 
 if __name__ == '__main__':

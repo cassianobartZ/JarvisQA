@@ -110,5 +110,13 @@ can we use the question itself to prepare the data?
 
 --------------FIRST CHANGE
 --Split answers if tokens exceed 512:
+---actually max_seq_len is for question+context, and my hipotesis is that the behavior is it is going to split when the length is achieved
+---so, ill split it between rows+extra_info every time it exceeds and see the difference
+---- at first we can already see some differences in answers, although incorrect, before the split, for question "What is the precision and recall of SemGraphQA?"
+    the only answer was "leat common", with the split, we get ["least common", "0.82", "0.70", "0.25"] and others. answer is 0.70,0.25
+---- during debugging, I can see that in question 'Which system has the worst recall?', which was right before, now it is getting it wrong, so the split is making it worse
+------actually i need to test this because i changed the bert, so, it could be the model
+--7h30 time to complete
+
 
 
