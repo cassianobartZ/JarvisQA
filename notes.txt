@@ -40,3 +40,23 @@ The paper with the maximum Study date is "A Comparison of Herbivore Damage on Th
 The most common Sub-hypothesis is "ANI", and the least common are "P INi, INID, ANDg, P Ag, INiDs, INiIs"
 The most common type of experiment is "Field", and the least common is "Exclosure"
 The most common Which species are compared? is "Aliens and natives", and the least common is "Only aliens"
+
+
+
+add aggregate before or after? check if addicional info is actually used
+can we use the question itself to prepare the data?
+
+--some questions exceed 512 tokens already - ill try to maybe answer splitting the input
+
+--------------FIRST CHANGE
+--Split answers if tokens exceed 512:
+---actually max_seq_len is for question+context, and my hipotesis is that the behavior is it is going to split when the length is achieved
+---so, ill split it between rows+extra_info every time it exceeds and see the difference
+---- at first we can already see some differences in answers, although incorrect, before the split, for question "What is the precision and recall of SemGraphQA?"
+    the only answer was "leat common", with the split, we get ["least common", "0.82", "0.70", "0.25"] and others. answer is 0.70,0.25
+---- during debugging, I can see that in question 'Which system has the worst recall?', which was right before, now it is getting it wrong, so the split is making it worse
+------actually i need to test this because i changed the bert, so, it could be the model
+--7h30 time to complete -  but better on gpu
+-- ok so, it improves on lcs, but it is worse in xls2
+-- need to run analysis on all data, but it seems it improves k=1 in some, but get worse in k=10
+--also the alg is running multiple times for same model - i think i fixed

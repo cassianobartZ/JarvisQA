@@ -1,125 +1,114 @@
-correct
-What type of data does the system proposed in paper titled "Open Research Knowledge Graph" support?
-Free text
+--questions running on split method without modifications, to check how we can treat the data: (LCS)
 
-correct
-What is the scope of "Decentralised Authoring, Annotations and Notifications for a Read-Write Web with Dokieli"?
-Full paper
+wrongs:
 
-correct
-Who is responsible for acquisition in the RASH system?
-Authors
+'What is the scope of "Decentralised Authoring, Annotations and Notifications for a Read-Write Web with Dokieli"?'
+--this used to be right if im not mistaken, test this on master
+--answer: Full paper
+--got: 'Dokie.li' and 'Semantic representation is "Dokie.li'
 
-correct
-Which system has the worst recall?
-YodaQA
+'What is the most common Knowledge representation method?'
+--this seems wrong even in the paper
+--answer: 3 
+--got: 'RDF' and 'Metadada, RDF'
 
-correct
-What was the most common type of approach for summarization before 2002?
-Algebraic
+'What is the precision and recall of SemGraphQA?'
+--answer: '0.70, 0.25'
+--got: bunch of stuff, from '0.82' to '0.70' and some texts like 'the least common'
 
-correct
-What is the maximum sample size?
-9394
+'Which system has the worst recall?'
+--answer: 'YodaQA'
+--got: 'QALD-5'
 
-correct
-What is the most common location in the studies?
-China
+'Which ontology has the most classes?'
+--answer: 'EXPO'
+--got: 'The SPAR Ontologies' and other texts
 
-correct
-What is the base URL of "The Document Components Ontology"?
-http://purl.org/spar/doco
+'What is the base URL of "The Document Components Ontology"?'
+--this one is interesting and can be the proof of my theory: when splitting, for the score ordering, sometimes the correct answer gets behind
+--the correct answer is found in position 19 of 30, while top_k is 10
+--answer: 'http://purl.org/spar/doco'
+--got: bunch of urls, but the correct one appears only once, while others repeat
 
-correct
-What is the most common lead compound?
-Aurein 1.2
+'what are the evidence and limitations of paper "Evaluating the Use of Social Networks in Author Name Disambiguation in Digital Libraries"?'
+--answer: 'Title words, Authors'
+--got: 'Slow due to user feedback' and 'Limitations is "Slow due to user feedback'
 
-correct
-What risk factors for OSA are discovered in the paper with 100% OSA frequency?
-Increase in age
+'For which country of study overall prevalence of epilepsy is the highest?'
+--answer: 'England'
+--got: 'France' and 'Switzerland'
 
-correct
-Which countries are considered in the papers about geopolitics?
-Ethiopia and Egypt
+'Which indicators for well-being are used in the studies on the effect of COVID-19?'
+--answer: 'Mental health, Life satisfaction, Mental well-being, Exhaustion, Family satisfaction, Work satisfaction'
+--got: 210 replies, maybe big csv, but: 'Mental well-being, , Exhaustion, Family satisfaction, Work satisfaction' on index 92, close
+-- the other results are breakdowns of the above words
 
-correct
-Which vegetables are utilized for betanin extraction?
-Beetroot
+'How many studies are published after 2019?'
+--answer: '3'
+--got: '2018.20', '2021' and variations
 
-correct
-What is the maximum egg mass in studies?
-1461.0
+'Which toxins do pseudomonas species produce?'
+--answer: 'Coronatine, Tabtoxinine beta-lactam, Polysaccharide, Phaseolotoxin, indole acetate, Cytokinin, Syringomycin, Syringopeptin, Syringotoxin, Tagetitoxin, Tolaasin'
+--got: 'Coronatine' and 'Coronatine, Polysaccharide'
 
-correct
-What is the most common substrate for catalysts?
-phenylacetylene
+'How many studies do use Chloride as major anion?'
+--answer: '2'
+--got: '2017', 'Chloride' and some dates
 
-correct
-For which region of data collection the number of sampling stations is the largest?
-Eastern Indian Ocean
+'What is the total number of species examined in the studies?'
+--answer: '3267'
+--got: 2470 answers, most of them are '927'
 
-correct
-What is the most common drug in the studies?
-Insulin
+'In what country was conducted research with the largest number of participants?'
+--answer: 'UK'
+--got: 'Turkey' and 'The most common Country is "Turkey'
 
-correct
-For what product minimum conversion was obtained?
-catechol
+'Are children examined in the studies?'
+-- this one might be wrong in NL 
+--answer: 'TRUE'
+--got: bunch of texts, from 'only examined in the intervention group' to 'collaborative involvement only examined in the intervention group'
 
-correct
-What is the most common type of biosensor?
-Glucose
+'What is the average reproductive number for studies?'
+-- food for tought: number answers, should we make some king of processing?
+--answer: '3.020645137756102'
+--got: 310 answers, a lot are '3.02'
 
-correct
-What is the maximum reaction yield for the studies?
-93
+'What is the maximum female percentage?'
+--answer: '86 %'
+--got: '66\xa0%, 67\xa0%', '80\xa0%' and others in the same format. '86\xa0%' can be found on index 26
 
+'What is the average energy generation of all energy sources considered?'
+--same case for numeric processing
+--answer: '767.37200439453124'
+--got: '767.37'
 
-wrong - this one I have doubts about if it is correct indeed
-What is the most common Knowledge representation method?
+'What is the average installed capacity of all energy sources considered?'
+--same case for numeric processing
+--answer: '367.570798339843756'
+--got: '367.57' a lot and on second position (right from k>1)
 
-wrong - and question, two informations needed --- maybe explode information and see if and is recognized?
-What is the precision and recall of SemGraphQA?
+'What are the objectives for Sepsis prediction?'
+--answer: 'Infection detection, Early warning, Surveillance'
+--got: 'Surveillance', 'Early warning', 'Infection detection' (separate, infection on index 9)
 
-wrong - multiple information - maybe try table transposition
-Which methods are used?
+'Is Cobb-Douglas functional applied in the studies?'
+-- same case for answers which are weird
+--answer: 'TRUE'
+--got: 'least common', 'least common is "Cobb-Douglas'
 
-wrong - need to compute data - maybe here I can do something
-Which ontology has the most classes?
+'What is the total number of patients in the studies?'
+--answer: '6452'
+--got: 170 answers, most common is '2124'
 
-wrong - column "uses similarity" and has prop cosine - maybe?
-"Does paper ""Disambiguating authors in citations on the web and authorship correlations"" employe Cosine similarity?"
+'For what product minimum conversion was obtained?'
+--answer: 'catechol'
+--got: 'Selective catalytic conversion of guaiacol to phenols', '33.0' and 'benzene'
 
-wrong - again I think this might have an error, but, it is needed to fetch data for a specific column
-"what are the evidence and limitations of paper ""Evaluating the Use of Social Networks in Author Name Disambiguation in Digital Libraries""?"
+'What is the average efficency for experiments?'
+-- another case of numeric processing
+--answer: '93.3125'
+--got: '93.31'
 
-wrong - list question  and need to see a column and get rows
-Which scholarly knowledge graphs support RDF?
-
-wrong - complex - column is not called country and needs to compare data
-For which country of study overall prevalence of epilepsy is the highest?
-
-wrong - column has the name indicators for well-being, but it needs to enumerate
-Which indicators for well-being are used in the studies on the effect of COVID-19?
-
-
-add aggregate before or after? check if addicional info is actually used
-can we use the question itself to prepare the data?
-
---some questions exceed 512 tokens already - ill try to maybe answer splitting the input
-
---------------FIRST CHANGE
---Split answers if tokens exceed 512:
----actually max_seq_len is for question+context, and my hipotesis is that the behavior is it is going to split when the length is achieved
----so, ill split it between rows+extra_info every time it exceeds and see the difference
----- at first we can already see some differences in answers, although incorrect, before the split, for question "What is the precision and recall of SemGraphQA?"
-    the only answer was "leat common", with the split, we get ["least common", "0.82", "0.70", "0.25"] and others. answer is 0.70,0.25
----- during debugging, I can see that in question 'Which system has the worst recall?', which was right before, now it is getting it wrong, so the split is making it worse
-------actually i need to test this because i changed the bert, so, it could be the model
---7h30 time to complete -  but better on gpu
--- ok so, it improves on lcs, but it is worse in xls2
--- need to run analysis on all data, but it seems it improves k=1 in some, but get worse in k=10
---also the alg is running multiple times for same model - i think i fixed
 
 
 
