@@ -119,7 +119,7 @@ can we use the question itself to prepare the data?
 --7h30 time to complete -  but better on gpu
 -- ok so, it improves on lcs, but it is worse in xls2
 -- need to run analysis on all data, but it seems it improves k=1 in some, but get worse in k=10
---also the alg is running multiple times for same model
+--also the alg is running multiple times for same model - i think i fixed
 
 
 
