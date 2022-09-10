@@ -41,8 +41,8 @@ def exp2(top_k=10, positions=None):
     #               'bert-large-cased-whole-word-masking-finetuned-squad', 'deepset/bert-base-cased-squad2',
     #               'deepset/bert-large-uncased-whole-word-masking-squad2', 'distilbert-base-uncased-distilled-squad',
     #               'ktrapeznikov/albert-xlarge-v2-squad-v2', 'replydotai/albert-xxlarge-v1-finetuned-squad2']:
-    with open('benchmark-results-exp2-all-split-test.txt', 'w+') as out_file:
-        for model in ['bert-large-cased-whole-word-masking-finetuned-squad', 'ktrapeznikov/albert-xlarge-v2-squad-v2']:
+    with open('benchmark-results-exp2-lcs-number-format-test.txt', 'w+') as out_file:
+        for model in ['bert-large-cased-whole-word-masking-finetuned-squad']:
             final_result = f'{final_result}On model: {model}\n'
             print(f'Starting with model {model}')
             for kind in ['normal', 'aggregation', 'related', 'similar']:
@@ -58,7 +58,7 @@ def exp2(top_k=10, positions=None):
                 final_result = f'{final_result}Jarvis:\nk={result[0]}\tPrecision: {result[1]:.4f},\tRecall: {result[2]:.4f},\tF1-Score: {result[3]:.4f}\n'
                 print(f"Done with Jarvis overall@{result[0]}")
             final_result = f'{final_result}{"=" * 40}\n'
-            out_file.write(final_result)          
+        out_file.write(final_result)          
 
 
 def exp4(top_k=10, positions=None):
