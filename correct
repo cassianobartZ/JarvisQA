@@ -26,6 +26,7 @@ wrongs:
 
 'What is the base URL of "The Document Components Ontology"?'
 --this one is interesting and can be the proof of my theory: when splitting, for the score ordering, sometimes the correct answer gets behind
+--maybe I can change something here, like, it is already sorting by score, but maybe think of something else
 --the correct answer is found in position 19 of 30, while top_k is 10
 --answer: 'http://purl.org/spar/doco'
 --got: bunch of urls, but the correct one appears only once, while others repeat
@@ -58,24 +59,36 @@ wrongs:
 'What is the total number of species examined in the studies?'
 --answer: '3267'
 --got: 2470 answers, most of them are '927'
+--this is actually a problem with splitting the data: the aggregate function is only making a sum of part of the data
+--or is it? actually extra info is going on the last set of answers, maybe the score is not high enough?
+--test this, if the sum is actually 3267 in the code
+--or maybe theres no sum, and only average
 
 'In what country was conducted research with the largest number of participants?'
+--here I can make a function to like, get the smallest and highest numeric column and expand it in text for all other columns
 --answer: 'UK'
 --got: 'Turkey' and 'The most common Country is "Turkey'
 
 'Are children examined in the studies?'
--- this one might be wrong in NL 
+-- this one might be wrong in NL
+--but the question remains: how to answer 'are' questions? because it is hard to think of this ahead of question
+--use the question?
 --answer: 'TRUE'
 --got: bunch of texts, from 'only examined in the intervention group' to 'collaborative involvement only examined in the intervention group'
 
 'What is the average reproductive number for studies?'
 -- food for tought: number answers, should we make some king of processing?
+--okay so I modified the code and same score, why? might need help here
+--it is a possibility that it was already considering as correct
 --answer: '3.020645137756102'
 --got: 310 answers, a lot are '3.02'
 
 'What is the maximum female percentage?'
 --answer: '86 %'
 --got: '66\xa0%, 67\xa0%', '80\xa0%' and others in the same format. '86\xa0%' can be found on index 26
+--so two things here
+--first, this is not considered a numeric column, so, without thinking of a full expand of all columns, it is hard to think how to approach this
+--second, remove the \xa0
 
 'What is the average energy generation of all energy sources considered?'
 --same case for numeric processing
@@ -88,6 +101,7 @@ wrongs:
 --got: '367.57' a lot and on second position (right from k>1)
 
 'What are the objectives for Sepsis prediction?'
+--how to deal with the order of the answers in multiple answer questions?
 --answer: 'Infection detection, Early warning, Surveillance'
 --got: 'Surveillance', 'Early warning', 'Infection detection' (separate, infection on index 9)
 
@@ -97,10 +111,12 @@ wrongs:
 --got: 'least common', 'least common is "Cobb-Douglas'
 
 'What is the total number of patients in the studies?'
+--another question that might benefit for the sum logic
 --answer: '6452'
 --got: 170 answers, most common is '2124'
 
 'For what product minimum conversion was obtained?'
+--like the question with number of participants, get the smallest and highest number
 --answer: 'catechol'
 --got: 'Selective catalytic conversion of guaiacol to phenols', '33.0' and 'benzene'
 
