@@ -35,8 +35,8 @@ class T2T:
     def append_aggregation_info(self, df: pd.DataFrame) -> str:
         info = []
         for column in df:
-            column_df = df[column].fillna('')
-            if is_numeric_dtype(column_df):
+            if is_numeric_dtype(df[column]):
+                column_df = df[column].fillna(0)
                 max_value = column_df.max()
                 min_value = column_df.min()
                 avg_value = column_df.mean()
@@ -47,7 +47,9 @@ class T2T:
                 min_title = df.iloc[column_df.argmin()]['Title']
                 info.append(f'The paper with the maximum {column} is "{max_title}"'
                             f' and the paper with the minimum {column} is {min_title}')
-            if is_string_dtype(column_df):
+                self.append_text_for_numeric_column(info, column, df)
+            if is_string_dtype(df[column]):
+                column_df = df[column].fillna('')
                 counts = Counter([str(value).strip() for value in chain(*[str(value).split(',') for value in column_df.values]) if len(value) > 0])
                 max_occurrence = max(counts.values())
                 if max_occurrence == 1:
@@ -61,6 +63,22 @@ class T2T:
                 info.append(f'The most common {column} {self.append_value(", ".join(most_common))},'
                             f' and the least common {self.append_value(", ".join(least_common))}')
         return '\n'.join(info)
+    
+    def append_text_for_numeric_column(self, info: str, numericColumnName: str, df: pd.DataFrame) -> str:
+        columns = list(df)
+
+        for indexColumnValue, columnValue in enumerate(df[numericColumnName]):
+            for indexIterationColumn,iterationColumn in enumerate(columns):
+                if is_numeric_dtype(df[iterationColumn]):
+                    continue
+                iterationColumnValue = df.iloc[indexColumnValue][iterationColumn]
+                info.append(f'The {numericColumnName} of {iterationColumnValue} is {columnValue}')
+                # the {numericColumnName|precision} of {iterationColumnValue|qald-6} is {columnValue|0.25}
+                # the {iterationColumnValue|qald-6} has {numericColumnName|precision} of {columnValue|0.25}
+                #  test scores with both
+
+        return info
+
 
     def row_2_text(self, row: List, header: List, start_index: int = 0, empty=False) -> str:
         text = f'{row[start_index]}'
@@ -77,6 +95,8 @@ class T2T:
         header, rows = self.read_csv(csv_path)
         sep = '\t' if csv_path[-4:] == '.tsv' else ','
         extra_info = self.append_aggregation_info(pd.read_csv(csv_path, sep=sep))
+
+        #  maybe make a branch here, if extra_info is larger than 500 or not, and handle it diffently
 
         resultArray = []
         allText = ''
