@@ -92,6 +92,7 @@ summary
  - Split of the context
    - how it was implemented
    - results
+   - possible shortcomings (speak about performance and how the score can be affected in each answer)
    - performance impact (should we treat this one per topic or have a sub topic about performance impact which analises everything?)
  - treatment of float numbers (not sure if we should put it)
    - how it was implemented
