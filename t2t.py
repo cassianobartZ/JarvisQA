@@ -149,13 +149,9 @@ class T2T:
             allText = allText + '\n' + rowText
         extra_info.append(allText)
 
-        if extra_info[0] == '':
-            print('hey')
-
         if len(extra_info) == 2 and len((extra_info[0]+extra_info[1]).split()) < 500:
             return [(extra_info[0]+extra_info[1])]
         else:
-            # attention here, i might have fucked up and never appended the last string
             # might be cool to make a function which combines all the chunks in the maximum size
             # resultArray[-1] = resultArray[-1] + '\n' + extra_info
             return extra_info
