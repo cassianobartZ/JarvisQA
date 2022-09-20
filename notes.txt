@@ -73,3 +73,41 @@ colaboration with soren
 
 think about topk: if we split long enough and it surpasses the topk, what happens?
 think about wording: is there a difference in calling it 'the sum' or 'total'? is it question dependant
+
+summary
+
+1- collaboration for the creation of SciQA
+ - motivation
+ - what is SciQA
+ - status on the article
+
+2- jarvisQA
+ - what is
+ - how it works
+ - current results with SciQA benchmark
+
+3- research on improving jarvisQA results
+ - Analisys on questions which were wrong
+ - Bert and 512 tokens limitation
+ - Split of the context
+   - how it was implemented
+   - results
+   - performance impact (should we treat this one per topic or have a sub topic about performance impact which analises everything?)
+ - treatment of float numbers (not sure if we should put it)
+   - how it was implemented
+   - results
+ - explosion of text for numeric columns
+   - how it was implemented
+   - results
+ - add sum of numeric columns (results are combined with explosion, should we run all approaches separated?)
+   - how it was implemented
+   - results
+ - add highest and lowest numeric value explosions
+   - how it was implemented
+   - results
+ - results for all approaches combines ( depending if we are running all approaches separated )
+ - performance analysis ( depending on decision above )
+
+4- Problems faced
+
+5- Conclusions (could be merged with problems faced)
