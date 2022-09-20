@@ -1,0 +1,46 @@
+On model: ktrapeznikov/albert-xlarge-v2-squad-v2
+Jarvis normal:
+k=1	Precision: 0.2667,	Recall: 0.2667,	F1-Score: 0.2667
+Jarvis normal:
+k=3	Precision: 0.3818,	Recall: 0.3818,	F1-Score: 0.3818
+Jarvis normal:
+k=5	Precision: 0.4074,	Recall: 0.4074,	F1-Score: 0.4074
+Jarvis normal:
+k=10	Precision: 0.4340,	Recall: 0.4340,	F1-Score: 0.4340
+******************************
+Jarvis aggregation:
+k=1	Precision: nan,	Recall: nan,	F1-Score: nan
+Jarvis aggregation:
+k=3	Precision: nan,	Recall: nan,	F1-Score: nan
+Jarvis aggregation:
+k=5	Precision: nan,	Recall: nan,	F1-Score: nan
+Jarvis aggregation:
+k=10	Precision: nan,	Recall: nan,	F1-Score: nan
+******************************
+Jarvis related:
+k=1	Precision: nan,	Recall: nan,	F1-Score: nan
+Jarvis related:
+k=3	Precision: nan,	Recall: nan,	F1-Score: nan
+Jarvis related:
+k=5	Precision: nan,	Recall: nan,	F1-Score: nan
+Jarvis related:
+k=10	Precision: nan,	Recall: nan,	F1-Score: nan
+******************************
+Jarvis similar:
+k=1	Precision: nan,	Recall: nan,	F1-Score: nan
+Jarvis similar:
+k=3	Precision: nan,	Recall: nan,	F1-Score: nan
+Jarvis similar:
+k=5	Precision: nan,	Recall: nan,	F1-Score: nan
+Jarvis similar:
+k=10	Precision: nan,	Recall: nan,	F1-Score: nan
+******************************
+Jarvis:
+k=1	Precision: 0.1882,	Recall: 0.1882,	F1-Score: 0.1882
+Jarvis:
+k=3	Precision: 0.2625,	Recall: 0.2625,	F1-Score: 0.2625
+Jarvis:
+k=5	Precision: 0.2785,	Recall: 0.2785,	F1-Score: 0.2785
+Jarvis:
+k=10	Precision: 0.2949,	Recall: 0.2949,	F1-Score: 0.2949
+========================================
