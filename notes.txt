@@ -62,10 +62,14 @@ can we use the question itself to prepare the data?
 --also the alg is running multiple times for same model - i think i fixed
 
 --the most common and least common aggregation is almost always the same thing since theres no checking
---extra_info with the explosion got too big, maybe test with split('\n') and see if we can get this right
+--extra_info with the explosion got too big, maybe test with split('\n') and see if we can get this right when making the splits for each question
 
 
 summary? make summary and send to eduardo
 speak about pc config
 times to run
 colaboration with soren
+
+
+think about topk: if we split long enough and it surpasses the topk, what happens?
+think about wording: is there a difference in calling it 'the sum' or 'total'? is it question dependant
