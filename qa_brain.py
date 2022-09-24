@@ -36,23 +36,15 @@ class QABrain:
             answer['answer'] = answer['answer'].strip('().{},\'"')
         return [a['answer'] for a in sorted(clean_answers, key=lambda x: x['score'], reverse=True)]
 
-    def answer(self, question, contexts, top_k=3):
-        answersForEachContext = []
-        for context in contexts:
-            answersForEachContext.append(self.nlp({
-                'question': question,
-                'context': context
-            }, topk=top_k, max_seq_len=512))
-
-        answersAggregated = []
-        for contextAnswers in answersForEachContext:
-            for answers in contextAnswers:
-                answersAggregated.append(answers)
-                
-        if not isinstance(answersAggregated, list):
-            answersAggregated = [answersAggregated]
-        for answer in answersAggregated:
+    def answer(self, question, context, top_k=3):
+        answers = self.nlp({
+            'question': question,
+            'context': context
+        }, topk=top_k, max_seq_len=512)
+        if not isinstance(answers, list):
+            answers = [answers]
+        for answer in answers:
             answer['answer'] = answer['answer'].strip('().{},\'"')
-        return [a['answer'] for a in sorted(answersAggregated, key=lambda x: x['score'], reverse=True)]
+        return [a['answer'] for a in sorted(answers, key=lambda x: x['score'], reverse=True)]
 
         
