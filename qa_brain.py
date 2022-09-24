@@ -53,6 +53,7 @@ class QABrain:
             answersAggregated = [answersAggregated]
         for answer in answersAggregated:
             answer['answer'] = answer['answer'].strip('().{},\'"')
+            # should we return first topK or all?
         return [a['answer'] for a in sorted(answersAggregated, key=lambda x: x['score'], reverse=True)]
 
         

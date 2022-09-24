@@ -94,7 +94,7 @@ summary
    - results
    - possible shortcomings (speak about performance and how the score can be affected in each answer)
    - performance impact (should we treat this one per topic or have a sub topic about performance impact which analises everything?)
- - treatment of float numbers (not sure if we should put it)
+ - treatment of float numbers (not sure if we should put it - test this)
    - how it was implemented
    - results
  - explosion of text for numeric columns
@@ -112,3 +112,5 @@ summary
 4- Problems faced
 
 5- Conclusions (could be merged with problems faced)
+
+https://www.overleaf.com/project/632aa048ab08f98277212c91

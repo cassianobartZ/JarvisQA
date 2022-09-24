@@ -41,10 +41,10 @@ class T2T:
                 min_value = column_df.min()
                 avg_value = column_df.mean()
                 sum = column_df.sum()
-                info.append(f'The maximum value of {column} is {max_value},'
-                            f' the minimum value of {column} is {min_value},'
-                            f' and the average value of {column} is {avg_value:.2f},'
-                            f'the total of {column} is {sum}')
+                info.append(f'The maximum value of {column} is {max_value}\n'
+                            f'the minimum value of {column} is {min_value}\n'
+                            f'and the average value of {column} is {avg_value:.2f}\n'
+                            f'the total of {column} is {sum}\n')
                 # max_title = df.iloc[column_df.argmax()]['Title']
                 # min_title = df.iloc[column_df.argmin()]['Title']
                 # info.append(f'The paper with the maximum {column} is "{max_title}"'
@@ -65,10 +65,10 @@ class T2T:
                 least_common = [k for k, v in counts.items() if v == min_occurrence]
 
                 for columnValue in most_common:
-                    info.append(f'The most common {column} {self.append_value(columnValue)}')
+                    info.append(f'The most common {column} {self.append_value(columnValue)}\n')
 
                 for columnValue in least_common:
-                    info.append(f'The least common {column} {self.append_value(columnValue)}')
+                    info.append(f'The least common {column} {self.append_value(columnValue)}\n')
 
                 # # identified error: least common or most common can grab a lot of entries and by itself explode 500 tokens
                 # info.append(f'The most common {column} {self.append_value(most_common[0])},'
@@ -93,8 +93,8 @@ class T2T:
                 continue
             lowestRowIterationColumnValue = rowForLowestNumericValue[iterationColumn]
             highestRowIterationColumnValue = rowForHighestNumericValue[iterationColumn]
-            info.append(f'The {iterationColumn} with the highest {numericColumnName} is {highestRowIterationColumnValue}')
-            info.append(f'The {iterationColumn} with the lowest {numericColumnName} is {lowestRowIterationColumnValue}')
+            info.append(f'The {iterationColumn} with the highest {numericColumnName} is {highestRowIterationColumnValue}\n')
+            info.append(f'The {iterationColumn} with the lowest {numericColumnName} is {lowestRowIterationColumnValue}\n')
             
         return info
         
@@ -106,7 +106,7 @@ class T2T:
                 if is_numeric_dtype(df[iterationColumn]):
                     continue
                 iterationColumnValue = df.iloc[indexColumnValue][iterationColumn]
-                info.append(f'The {numericColumnName} of {iterationColumnValue} is {columnValue}')
+                info.append(f'The {numericColumnName} of {iterationColumnValue} is {columnValue}\n')
                 # the {numericColumnName|precision} of {iterationColumnValue|qald-6} is {columnValue|0.25}
                 # the {iterationColumnValue|qald-6} has {numericColumnName|precision} of {columnValue|0.25}
                 #  test scores with both
