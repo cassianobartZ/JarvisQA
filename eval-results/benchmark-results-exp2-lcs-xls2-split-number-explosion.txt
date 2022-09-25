@@ -1,0 +1,98 @@
+Starting now: Sun Sep 25 01:57:33 2022
+Starting now for model ktrapeznikov/albert-xlarge-v2-squad-v2: Sun Sep 25 01:57:33 2022
+Done with model ktrapeznikov/albert-xlarge-v2-squad-v2 on time Sun Sep 25 03:01:20 2022
+Starting now for model bert-large-cased-whole-word-masking-finetuned-squad: Sun Sep 25 03:01:20 2022
+Done with model bert-large-cased-whole-word-masking-finetuned-squad on time Sun Sep 25 03:57:04 2022
+On model: ktrapeznikov/albert-xlarge-v2-squad-v2
+Jarvis normal:
+k=1	Precision: 0.1692,	Recall: 0.1692,	F1-Score: 0.1692
+Jarvis normal:
+k=3	Precision: 0.2667,	Recall: 0.2667,	F1-Score: 0.2667
+Jarvis normal:
+k=5	Precision: 0.2881,	Recall: 0.2881,	F1-Score: 0.2881
+Jarvis normal:
+k=10	Precision: 0.3571,	Recall: 0.3571,	F1-Score: 0.3571
+******************************
+Jarvis aggregation:
+k=1	Precision: nan,	Recall: nan,	F1-Score: nan
+Jarvis aggregation:
+k=3	Precision: nan,	Recall: nan,	F1-Score: nan
+Jarvis aggregation:
+k=5	Precision: nan,	Recall: nan,	F1-Score: nan
+Jarvis aggregation:
+k=10	Precision: nan,	Recall: nan,	F1-Score: nan
+******************************
+Jarvis related:
+k=1	Precision: nan,	Recall: nan,	F1-Score: nan
+Jarvis related:
+k=3	Precision: nan,	Recall: nan,	F1-Score: nan
+Jarvis related:
+k=5	Precision: nan,	Recall: nan,	F1-Score: nan
+Jarvis related:
+k=10	Precision: nan,	Recall: nan,	F1-Score: nan
+******************************
+Jarvis similar:
+k=1	Precision: nan,	Recall: nan,	F1-Score: nan
+Jarvis similar:
+k=3	Precision: nan,	Recall: nan,	F1-Score: nan
+Jarvis similar:
+k=5	Precision: nan,	Recall: nan,	F1-Score: nan
+Jarvis similar:
+k=10	Precision: nan,	Recall: nan,	F1-Score: nan
+******************************
+Jarvis:
+k=1	Precision: 0.1222,	Recall: 0.1222,	F1-Score: 0.1222
+Jarvis:
+k=3	Precision: 0.1882,	Recall: 0.1882,	F1-Score: 0.1882
+Jarvis:
+k=5	Precision: 0.2024,	Recall: 0.2024,	F1-Score: 0.2024
+Jarvis:
+k=10	Precision: 0.2469,	Recall: 0.2469,	F1-Score: 0.2469
+========================================
+On model: bert-large-cased-whole-word-masking-finetuned-squad
+Jarvis normal:
+k=1	Precision: 0.1538,	Recall: 0.1538,	F1-Score: 0.1538
+Jarvis normal:
+k=3	Precision: 0.1905,	Recall: 0.1905,	F1-Score: 0.1905
+Jarvis normal:
+k=5	Precision: 0.1905,	Recall: 0.1905,	F1-Score: 0.1905
+Jarvis normal:
+k=10	Precision: 0.2500,	Recall: 0.2500,	F1-Score: 0.2500
+******************************
+Jarvis aggregation:
+k=1	Precision: nan,	Recall: nan,	F1-Score: nan
+Jarvis aggregation:
+k=3	Precision: nan,	Recall: nan,	F1-Score: nan
+Jarvis aggregation:
+k=5	Precision: nan,	Recall: nan,	F1-Score: nan
+Jarvis aggregation:
+k=10	Precision: nan,	Recall: nan,	F1-Score: nan
+******************************
+Jarvis related:
+k=1	Precision: nan,	Recall: nan,	F1-Score: nan
+Jarvis related:
+k=3	Precision: nan,	Recall: nan,	F1-Score: nan
+Jarvis related:
+k=5	Precision: nan,	Recall: nan,	F1-Score: nan
+Jarvis related:
+k=10	Precision: nan,	Recall: nan,	F1-Score: nan
+******************************
+Jarvis similar:
+k=1	Precision: nan,	Recall: nan,	F1-Score: nan
+Jarvis similar:
+k=3	Precision: nan,	Recall: nan,	F1-Score: nan
+Jarvis similar:
+k=5	Precision: nan,	Recall: nan,	F1-Score: nan
+Jarvis similar:
+k=10	Precision: nan,	Recall: nan,	F1-Score: nan
+******************************
+Jarvis:
+k=1	Precision: 0.1111,	Recall: 0.1111,	F1-Score: 0.1111
+Jarvis:
+k=3	Precision: 0.1364,	Recall: 0.1364,	F1-Score: 0.1364
+Jarvis:
+k=5	Precision: 0.1364,	Recall: 0.1364,	F1-Score: 0.1364
+Jarvis:
+k=10	Precision: 0.1765,	Recall: 0.1765,	F1-Score: 0.1765
+========================================
+Done for all models in time Sun Sep 25 03:57:04 2022
