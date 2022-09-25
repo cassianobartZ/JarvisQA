@@ -42,10 +42,10 @@ def exp2(top_k=10, positions=None):
     #               'bert-large-cased-whole-word-masking-finetuned-squad', 'deepset/bert-base-cased-squad2',
     #               'deepset/bert-large-uncased-whole-word-masking-squad2', 'distilbert-base-uncased-distilled-squad',
     #               'ktrapeznikov/albert-xlarge-v2-squad-v2', 'replydotai/albert-xxlarge-v1-finetuned-squad2']:
-    with open('benchmark-results-exp2-xls2-float-treatment-right-all-approaches.txt', 'w+') as out_file:
+    with open('benchmark-results-exp2-lcs-without-split-cpu.txt', 'w+') as out_file:
         starting_time = time()
         out_file.write(f"Starting now: {ctime(starting_time)}\n")
-        for model in ['ktrapeznikov/albert-xlarge-v2-squad-v2']:
+        for model in ['bert-large-cased-whole-word-masking-finetuned-squad']:
             starting_time_model = time()
             out_file.write(f"Starting now for model {model}: {ctime(starting_time_model)}\n")
             final_result = f'{final_result}On model: {model}\n'

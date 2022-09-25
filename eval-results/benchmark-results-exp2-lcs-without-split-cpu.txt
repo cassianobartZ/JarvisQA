@@ -1,3 +1,6 @@
+Starting now: Sun Sep 25 13:35:04 2022
+Starting now for model bert-large-cased-whole-word-masking-finetuned-squad: Sun Sep 25 13:35:04 2022
+Done with model bert-large-cased-whole-word-masking-finetuned-squad on time Sun Sep 25 14:13:26 2022
 On model: bert-large-cased-whole-word-masking-finetuned-squad
 Jarvis normal:
 k=1	Precision: 0.1935,	Recall: 0.1935,	F1-Score: 0.1935
@@ -44,3 +47,4 @@ k=5	Precision: 0.1647,	Recall: 0.1647,	F1-Score: 0.1647
 Jarvis:
 k=10	Precision: 0.1786,	Recall: 0.1786,	F1-Score: 0.1786
 ========================================
+Done for all models in time Sun Sep 25 14:13:26 2022

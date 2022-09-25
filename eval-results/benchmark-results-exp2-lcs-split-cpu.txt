@@ -3,13 +3,13 @@ Starting now for model bert-large-cased-whole-word-masking-finetuned-squad: Sun 
 Done with model bert-large-cased-whole-word-masking-finetuned-squad on time Sun Sep 25 10:51:26 2022
 On model: bert-large-cased-whole-word-masking-finetuned-squad
 Jarvis normal:
-k=1	Precision: 0.1538,	Recall: 0.1538,	F1-Score: 0.1538
+k=1	Precision: 0.2258,	Recall: 0.2258,	F1-Score: 0.2258
 Jarvis normal:
-k=3	Precision: 0.1719,	Recall: 0.1719,	F1-Score: 0.1719
+k=3	Precision: 0.2459,	Recall: 0.2459,	F1-Score: 0.2459
 Jarvis normal:
-k=5	Precision: 0.1905,	Recall: 0.1905,	F1-Score: 0.1905
+k=5	Precision: 0.2459,	Recall: 0.2459,	F1-Score: 0.2459
 Jarvis normal:
-k=10	Precision: 0.2500,	Recall: 0.2500,	F1-Score: 0.2500
+k=10	Precision: 0.2459,	Recall: 0.2459,	F1-Score: 0.2459
 ******************************
 Jarvis aggregation:
 k=1	Precision: nan,	Recall: nan,	F1-Score: nan
@@ -39,12 +39,12 @@ Jarvis similar:
 k=10	Precision: nan,	Recall: nan,	F1-Score: nan
 ******************************
 Jarvis:
-k=1	Precision: 0.1111,	Recall: 0.1111,	F1-Score: 0.1111
+k=1	Precision: 0.1609,	Recall: 0.1609,	F1-Score: 0.1609
 Jarvis:
-k=3	Precision: 0.1236,	Recall: 0.1236,	F1-Score: 0.1236
+k=3	Precision: 0.1744,	Recall: 0.1744,	F1-Score: 0.1744
 Jarvis:
-k=5	Precision: 0.1364,	Recall: 0.1364,	F1-Score: 0.1364
+k=5	Precision: 0.1744,	Recall: 0.1744,	F1-Score: 0.1744
 Jarvis:
-k=10	Precision: 0.1765,	Recall: 0.1765,	F1-Score: 0.1765
+k=10	Precision: 0.1744,	Recall: 0.1744,	F1-Score: 0.1744
 ========================================
 Done for all models in time Sun Sep 25 10:51:26 2022
