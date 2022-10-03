@@ -140,7 +140,7 @@ def evaluate_jarvis_efficient(dataset_path, top_k=3, qtype=None, model_name='dee
         if qtype is not None:
             if row['Type'] != qtype:
                 continue
-        y_true.append(real_answer if pd.notna(real_answer) else '')
+        y_true.append(str(real_answer) if pd.notna(real_answer) else '')
         #if len(times) % 20 == 0:
         #    qa = JarvisQA(model=model_name, tokenizer=model_name)
         start = time()
@@ -148,14 +148,22 @@ def evaluate_jarvis_efficient(dataset_path, top_k=3, qtype=None, model_name='dee
         end = time()
         times.append(end - start)
         for i in range(top_k):
-            if real_answer in answers[:i+1]:
-                y_pred[i].append(real_answer)
+            if real_answer in answers[:i+1] or isFloatAnswerInAnswersArray(real_answer, answers, i):
+                y_pred[i].append(str(real_answer))
             else:
                 y_pred[i].append(answers[0])
     for k in range(top_k):
         p, r, f1, _ = precision_recall_fscore_support(y_true, y_pred[k], average='macro', zero_division=0)
         results.append((k+1, p, r, f1))
     return results
+
+def isFloatAnswerInAnswersArray(expectedAnswer, answers, topK):
+    if not isinstance(expectedAnswer, float):
+        return False
+    
+    formattedExpectedAnswer = f"{expectedAnswer:.2f}"
+    test = formattedExpectedAnswer in answers[:topK+1]
+    return test
 
 
 #@profile

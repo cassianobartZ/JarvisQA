@@ -1,0 +1,53 @@
+Question,Table,Type,Answer
+"What type of data does the system proposed in paper titled ""Open Research Knowledge Graph"" support?",R8364,normal,Free text
+"What is the scope of ""Decentralised Authoring, Annotations and Notifications for a Read-Write Web with Dokieli""?",R8364,normal,Full paper
+What is the most common Knowledge representation method?,R8364,normal,3
+Who is responsible for acquisition in the RASH system?,R8364,normal,Authors
+What is the precision and recall of SemGraphQA?,R6898,normal,"0.70, 0.25"
+Which system has the worst recall?,R6946,normal,"YodaQA"
+What was the most common type of approach for summarization before 2002?,R6948,normal,Algebraic
+What is the maximum sample size?,R135371,normal,9394
+What is the most common location in the studies?,R111045,normal,China
+Which methods are used?,R110361,list,"Interviews, cross-sectional field study, case studies, Personas, literature review, Ethnographic study, Focus groups, Observations, Principal component analysis (PCA), survey, Behavioural mapping, Post-occupancy evaluation (POE)"
+Which ontology has the most classes?,R8342,normal,EXPO
+"What is the base URL of ""The Document Components Ontology""?",R8342,normal,http://purl.org/spar/doco
+"Does paper ""Disambiguating authors in citations on the web and authorship correlations"" employe Cosine similarity?",R6187,ask,TRUE
+"what are the evidence and limitations of paper ""Evaluating the Use of Social Networks in Author Name Disambiguation in Digital Libraries""?",R6751,normal,"Title words, Authors"
+Which scholarly knowledge graphs support RDF?,R78023,list,"SciGraph, ResearchGraph"
+For which country of study overall prevalence of epilepsy is the highest?,R110655,normal,England
+Which indicators for well-being are used in the studies on the effect of COVID-19?,R78492,normal,"Mental health, Life satisfaction, Mental well-being, Exhaustion, Family satisfaction, Work satisfaction"
+How many studies are published after 2019?,R110393,normal,3
+Which toxins do pseudomonas species produce?,R69027,normal,"Coronatine, Tabtoxinine beta-lactam, Polysaccharide, Phaseolotoxin, indole acetate, Cytokinin, Syringomycin, Syringopeptin, Syringotoxin, Tagetitoxin, Tolaasin"
+What is the most common lead compound?,R75638,normal,Aurein 1.2
+What risk factors for OSA are discovered in the paper with 100% OSA frequency?  ,R110932,normal,Increase in age
+How many studies do use Chloride as major anion?,R110597,normal,2
+What is the full name of the EXPO ontology?,R8342,empty,NO ANSWER
+Which countries are considered in the papers about geopolitics?,R74650,normal,Ethiopia and Egypt
+What can one use instead of wheat flour?,R111117,list,"banana, lupin. Cassava and African Yam Bean"
+Which are 3 the most common variables for the atmosphere models?,R68871,list,"Wind components, Surface pressure, Vapour/solid/liquid"
+What is the total number of species examined in the studies?,R58002,normal,3267
+In what country was conducted research with the largest number of participants?,R44980,normal,UK
+Are children examined in the studies?,R44979,normal,TRUE
+What is the average reproductive number for studies?,R44930,normal,3.020645137756102
+What is the maximum female percentage?,R44978,normal,86 %
+What is the average energy generation of all energy sources considered?,R153801,normal,767.37200439453124
+What is the average installed capacity of all energy sources considered?,R153801,normal,367.570798339843756
+Where can all the data sets used in the compared studies be found?,R112387,list,"https://seel.cse.lsu.edu/data/re17.zip, https://mast.informatik.uni-hamburg.de/wp-content/uploads/2014/03/REJ_data.zip, https://seel.cse.lsu.edu/data/refsq17.zip, https://sites.google.com/site/appsuserreviews/, https://mast.informatik.uni-hamburg.de/wp-content/uploads/2014/03/REJ_data.zip, https://zenodo.org/record/56907#.YKT_NudCRPY, https://sites.google.com/site/appsimilarity/, https://github.com/saltlab/Minning-App-Stores, https://github.com/SAILResearch/replication-prioritize_devices_test_app"
+Which vegetables are utilized for betanin extraction?,R75363,normal,Beetroot
+What are the objectives for Sepsis prediction?,R70642,normal,"Infection detection, Early warning, Surveillance"
+Is Cobb-Douglas functional applied in the studies?,R34493,normal,TRUE
+What is the total number of patients in the studies?,R33008,normal,6452
+What is the maximum egg mass in studies?,R34845,normal,1461.0
+What is the most common substrate for catalysts?,R25900,normal,phenylacetylene
+For which region of data collection the number of sampling stations is the largest?,R155584 ,normal,Eastern Indian Ocean
+What are areas of study?,R155445,list,"Mawrth Vallis, Gale crater, Capri Chasma, Nili Patera caldera, Elorza Crater"
+What is the most common drug in the studies?,R155621,normal,Insulin
+Do all studies include open ocean sampling?,R155561,ask,FALSE
+For what product minimum conversion was obtained?,R155272,normal,catechol
+What is the average efficency for experiments?,R155266,normal,93.3125
+What preprocessing methods are used?,R155154,list,"Radiometric calibration, MODTRAN atmospheric radiative transfer function, Dark Object Subtraction, De-striping, Bad Bands removed"
+What is the most common type of biosensor?,R151435,normal,Glucose
+Where did the study with maximal geographic scale take place?,R149849,list,"United States of America, Mexico, Canada"
+What types of nanocarriers do have therapeutic effect?,R144364,list,"Liposomes, Lipid nanocapsules, Nano-lipid carrier, Extracellular vesicles"
+For what piezoresistive material the least response time was obtained?,R138374,list,Graphene-based cellular elastomer (G-elastomer)
+What is the maximum reaction yield for the studies? ,R137086,normal,93
