@@ -45,10 +45,6 @@ class T2T:
                             f'the minimum value of {column} is {min_value}\n'
                             f'and the average value of {column} is {avg_value:.2f}\n'
                             f'the total of {column} is {sum}\n')
-                # max_title = df.iloc[column_df.argmax()]['Title']
-                # min_title = df.iloc[column_df.argmin()]['Title']
-                # info.append(f'The paper with the maximum {column} is "{max_title}"'
-                #             f' and the paper with the minimum {column} is {min_title}')
                 self.append_text_for_maximum_and_minimum_numeric_column(info, column, df)
                 self.append_text_for_numeric_column(info, column, df)
             if is_string_dtype(df[column]):
@@ -70,9 +66,6 @@ class T2T:
                 for columnValue in least_common:
                     info.append(f'The least common {column} {self.append_value(columnValue)}\n')
 
-                # # identified error: least common or most common can grab a lot of entries and by itself explode 500 tokens
-                # info.append(f'The most common {column} {self.append_value(most_common[0])},'
-                #             f' and the least common {self.append_value(least_common[0])}')
         return '\n'.join(info)
 
     
@@ -81,12 +74,6 @@ class T2T:
         column_df = df[numericColumnName].fillna(0)
         rowForHighestNumericValue = df.iloc[column_df.argmax()]
         rowForLowestNumericValue = df.iloc[column_df.argmin()]
-
-        # info.append(f'The paper with the maximum {column} is "{max_title}"'
-        #             f' and the paper with the minimum {column} is {min_title}')
-
-        #  the {iterationColum/title} with the highest {numericColumn/numberOfSpecies} is {iterationColumnValue/the invertebrale...}
-        #  {iterationColumn} {numericColumnName} {iterationColumnValue}
 
         for indexIterationColumn,iterationColumn in enumerate(columns):
             if is_numeric_dtype(df[iterationColumn]):
@@ -107,9 +94,6 @@ class T2T:
                     continue
                 iterationColumnValue = df.iloc[indexColumnValue][iterationColumn]
                 info.append(f'The {numericColumnName} of {iterationColumnValue} is {columnValue}\n')
-                # the {numericColumnName|precision} of {iterationColumnValue|qald-6} is {columnValue|0.25}
-                # the {iterationColumnValue|qald-6} has {numericColumnName|precision} of {columnValue|0.25}
-                #  test scores with both
 
         return info
 
@@ -130,13 +114,11 @@ class T2T:
         sep = '\t' if csv_path[-4:] == '.tsv' else ','
         extra_info = self.append_aggregation_info(pd.read_csv(csv_path, sep=sep))
 
-        #  maybe make a branch here, if extra_info is larger than 500 or not, and handle it diffently
         if len(extra_info.split()) > 500:
             extra_info = self.splitExtraInfoInArraysOfSuitableSize(extra_info)
         else:
             extra_info = [extra_info]
 
-        # okay so I have extra_info split but now I have to deal with the context itself, maybe its better to separate text from extra info in runs?
         resultArray = []
         allText = ''
         for row in rows:
@@ -152,8 +134,6 @@ class T2T:
         if len(extra_info) == 2 and len((extra_info[0]+extra_info[1]).split()) < 500:
             return [(extra_info[0]+extra_info[1])]
         else:
-            # might be cool to make a function which combines all the chunks in the maximum size
-            # resultArray[-1] = resultArray[-1] + '\n' + extra_info
             return extra_info
 
     def splitExtraInfoInArraysOfSuitableSize(self, extra_info):
